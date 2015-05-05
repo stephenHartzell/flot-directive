@@ -25,6 +25,6 @@ directive are in a contained with several new features:
 ## Installation ##
 Just download as a zip or clone and open the index.html file!
 
-## Basic Usage ## 
+## Basic usage ##
 To use simply include the directives.js file in your AngularJS app and include it in your Angular app! 
 All the hooks are there, and its easy to modify!
