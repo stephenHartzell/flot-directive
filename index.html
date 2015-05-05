@@ -1,0 +1,78 @@
+<!doctype html>
+<!--  ng-app implies this is an angular app boot strap with the name analyst -->
+<html lang="en" ng-app="flotTest">
+<head>
+  <meta charset="utf-8">
+  <title>Flot Tests</title>
+  
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
+  <script src="lib/browser.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  
+  <script src="lib/jquery-ui.min.js"></script>
+  <script src="lib/base64.js"></script>
+  <script src="lib/Blob.js"></script>
+  <script src="lib/FileSaver.js"></script>
+  <script src="lib/parseColor.js"></script>
+  
+  <script src="lib/flot/jquery.flot.js"></script>
+  <script src="lib/flot/jquery.flot.canvas.js"></script>
+  <script src="lib/flot/jquery.flot.categories.js"></script>
+  <script src="lib/flot/jquery.flot.crosshair.js"></script>
+  <script src="lib/flot/jquery.flot.dashes.js"></script>
+  <script src="lib/flot/jquery.flot.errorbars.js"></script>
+  <script src="lib/flot/jquery.flot.extend.js"></script>
+  <script src="lib/flot/jquery.flot.fillbetween.js"></script>
+  <script src="lib/flot/jquery.flot.image.js"></script>
+  <script src="lib/flot/jquery.flot.legendoncanvas.js"></script>
+  <script src="lib/flot/jquery.flot.navigate.js"></script>
+  <script src="lib/flot/jquery.flot.pie.js"></script>
+  <script src="lib/flot/jquery.flot.resize.js"></script>
+  <script src="lib/flot/jquery.flot.selection.js"></script>
+  <script src="lib/flot/jquery.flot.stack.js"></script>
+  <script src="lib/flot/jquery.flot.symbol.js"></script>
+  <script src="lib/flot/jquery.flot.threshold.js"></script>
+  <script src="lib/flot/jquery.flot.time.js"></script>
+  <script src="lib/flot/jquery.flot.axislabels.js"></script>
+  
+  
+  
+<!-- Create a rootScope variable for the STATIC_URL prefix --> 
+<body>
+  
+  <!-- The page content -->
+  <!-- Everything that is shown is shown in this div -->
+  <div ng-controller="flotTestCtrl" style="height:100%">
+  	<h1>Flot Directive Test Bed</h1>
+  	<div style="background-color: #FFF8C6; width:10px;height:10px;"></div>
+  	<button type="button" ng-click="draggable = !draggable" class="btn btn-default btn-lg">
+      <span ng-if="draggable" class="glyphicon glyphicon-stop"></span>
+      <span ng-if="!draggable" class="glyphicon glyphicon-play"></span> 
+      Draggable Toggle
+    </button>
+    
+    <flot loading="loading" plot-data="series" options="options" resizable="resizable" draggable="draggable" minimizable="minimizable" minimized="minimized" maximizable="maximizable"></flot>
+    
+    <nav ng-show="minimized==true" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    	<ul class="nav navbar-nav">
+    		<li class="dropdown" dropdown>
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>Dropdown <span class="caret"></span></a>
+          		<ul class="dropdown-menu" role="menu">
+            		<li><a href="#" ng-click="minimized=!minimized">Figure 1</a></li>
+            		<li><a href="#">Figure 2</a></li>
+          		</ul>
+        	</li>
+        	<li class="active"><a href="#" ng-click="minimized=!minimized">Figure 1</a></li>
+        	<li><a href="#">Figure 2</a></li>
+      	</ul>
+	</nav>    
+  </div>
+</body>
+</html>
